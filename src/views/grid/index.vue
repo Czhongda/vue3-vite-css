@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { provide } from 'vue'
+provide('injectName', 'Vue.js')
+console.log('网格');
+
 </script>
 <template>
   <div>

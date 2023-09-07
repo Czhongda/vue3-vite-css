@@ -25,7 +25,8 @@ import CustomInput from './CustomInput.vue'
 import MyButton from './MyButton.vue'
 import FancyList from './FancyList.vue'
 import MouseTracker from './MouseTracker.vue'
-import { ref,onMounted,watch } from 'vue'
+import {keyName,keyAge} from '@/utils/keys'
+import { ref,onMounted,watch,provide  } from 'vue'
 const childRef = ref(null)
 const inputValue = ref('')
 onMounted(() => {
@@ -41,4 +42,6 @@ watch(inputValue,(newVal,oldVal)=>{
 const onClick = () => {
   console.log(444,'index点击了')
 }
+provide(keyAge, 111)
+provide(keyName, 'vuejs哈哈哈')
 </script>
