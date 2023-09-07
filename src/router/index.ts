@@ -20,6 +20,18 @@ const router = createRouter({
       path:'/gridTab',
       name:'gridTab',
       component: () => import('../views/grid/index.vue')
+    },{
+      path:'/flexTab',
+      name:'flexTab',
+      component: () => import('../views/flex/index.vue')
+    },{
+      path:'/refTem',
+      name:'refTem',
+      component: () => import('../views/reftem/index.vue')
+    },{
+      path:'/compList',
+      name:'compList',
+      component: () => import('../views/comlist/index.vue')
     }
   ]
 })
