@@ -16,7 +16,7 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/gridTab">网格grid</RouterLink>
         <RouterLink to="/flexTab">flex布局</RouterLink>
         <RouterLink to="/refTem">模板引用</RouterLink>
-        <RouterLink to="/compList">模板1-master</RouterLink>
+        <RouterLink to="/compList">模板1-master--push222</RouterLink>
       </nav>
     </div>
   </header>
