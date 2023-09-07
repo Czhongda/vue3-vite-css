@@ -32,6 +32,10 @@ const router = createRouter({
       path:'/compList',
       name:'compList',
       component: () => import('../views/comlist/index.vue')
+    },{
+      path:'/asyncComp',
+      name:'asyncComp',
+      component: () => import('../views/test/asyncComp/index.vue')
     }
   ]
 })
