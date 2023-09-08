@@ -10,6 +10,8 @@ import LoadingComponent from './LoadingComponent.vue'
 import ErrorComponent from './ErrorComponent.vue'
 import { defineAsyncComponent } from 'vue'
 const showTag = ref(false)
+console.log(333,defineAsyncComponent);
+
 const time = (t, callback = () => { }) => {
   return new Promise(resolve => {
     setTimeout(() => {
@@ -20,7 +22,8 @@ const time = (t, callback = () => { }) => {
 }
 let count = 0
 const AsyncComp = defineAsyncComponent(() => ({
-  loader: import('./AsyncComp.vue'),
+  loader: 
+  ()=>import('./AsyncComp.vue'),
   //  () => {
   //   return new Promise((resolve, reject) => {
   //     (async function () {
@@ -45,7 +48,18 @@ const AsyncComp = defineAsyncComponent(() => ({
   errorComponent: ErrorComponent,
   // 如果提供了一个 timeout 时间限制，并超时了
   // 也会显示这里配置的报错组件，默认值是：Infinity
-  timeout: 3000
+  timeout: 3000,
+  onError(error, retry, fail, attempts) {
+    // 注意，retry/fail 就像 promise 的 resolve/reject 一样：
+    // 必须调用其中一个才能继续错误处理。
+    if (attempts < 3) {
+      // 请求发生错误时重试，最多可尝试 3 次
+      console.log(attempts)
+      retry()
+    } else {
+      fail()
+    }
+  }
 }))
 // const AsyncComp = defineAsyncComponent(() => 
 //   import('./AsyncComp.vue')
