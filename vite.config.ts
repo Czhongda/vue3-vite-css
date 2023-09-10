@@ -18,5 +18,8 @@ export default defineConfig({
       'vue': 'vue/dist/vue.esm-bundler.js'
     },
     // extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json']
-  }
+  },
+  define: {
+    'process.env': {ss:11},
+  },
 })

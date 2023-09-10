@@ -18,6 +18,7 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/refTem">模板引用</RouterLink>
         <RouterLink to="/compList">模板1</RouterLink>
         <RouterLink to="/asyncComp">异步组件</RouterLink>
+        <RouterLink to="/compose">组合函数</RouterLink>
       </nav>
     </div>
   </header>

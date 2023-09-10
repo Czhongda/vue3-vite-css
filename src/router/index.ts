@@ -36,6 +36,10 @@ const router = createRouter({
       path:'/asyncComp',
       name:'asyncComp',
       component: () => import('../views/test/asyncComp/index.vue')
+    },{
+      path:'/compose',
+      name:'compose',
+      component: () => import('../views/compose/index.vue')
     }
   ]
 })
