@@ -1,7 +1,8 @@
 import axios from 'axios'
 
+const baseURL = import.meta.env.VITE_BASE_URL
 const service = axios.create({
-  baseURL: process.env.BASE_API,
+  baseURL,
   timeout: 5000
 })
 

@@ -5,14 +5,17 @@
   </div>
 </template>
 <script setup lang="ts">
-import * as process from 'process';
 import MouseDestination from './MouseDestination.vue';
-import {onMounted} from 'vue';
+import { onMounted,ref } from 'vue';
+import {getTest} from '@/api/test'
 
-onMounted(() => {
-  console.log(333,process,process.env,process.env.NODE_ENV,import.meta.env,import.meta.env.MODE);
-  console.log('import.meta',import.meta.env);
+const dataList =ref([])
+
+onMounted(async () => {
+  const res = await getTest()
   
-  
+  dataList.value = res.data.data
+  console.log('请求结果',dataList.value[0])
 })
+
 </script>
