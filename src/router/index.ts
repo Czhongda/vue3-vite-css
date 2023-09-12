@@ -40,6 +40,10 @@ const router = createRouter({
       path:'/compose',
       name:'compose',
       component: () => import('../views/compose/index.vue')
+    },{
+      path:'/customDirec',
+      name:'customDirec',
+      component: () => import('../views/customDirec/index.vue')
     }
   ]
 })
