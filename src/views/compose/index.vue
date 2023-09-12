@@ -4,14 +4,23 @@
     <MouseDestination />
     <hr />
     <button @click="changeN">changeN</button>
-    <div> x:{{ rv1.x }} y:{{ rv1.y }}</div>
+    <div> x:{{ ro.x }} y:{{ ro.y }}</div>
   </div>
 </template>
+<script lang="ts">
+import { useMoo } from '@/composebles/eMouse'
+import { onMounted, ref,reactive } from 'vue';
+const n1 = ref(22)
+const {ro} = useMoo(n1)
+const changeN = () => {
+  n1.value *= 2 
+}
+</script>
 <script setup lang="ts">
 import MouseDestination from './MouseDestination.vue';
-import { onMounted, ref,reactive } from 'vue';
+
 import { getTest } from '@/api/test'
-import { useMoo } from '@/composebles/eMouse'
+
 
 const dataList = ref([])
 
@@ -26,10 +35,6 @@ onMounted(async () => {
   console.log('fetch结果', r1);
 })
 
-const n1 = ref(22)
-const rv1 = reactive(useMoo(n1))
-const changeN = () => {
-  n1.value = 33
-}
+
 
 </script>

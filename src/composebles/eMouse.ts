@@ -1,11 +1,13 @@
-import {ref,watchEffect,toValue} from 'vue'
+import {ref,reactive,watchEffect,toValue} from 'vue'
 import type {Ref} from 'vue'
 
 export function useMoo(url:string|number|Ref<string|number>){
   // const x = ref(0)
   // const y = ref(0)
-  let x = 0
-  let y = 0
+  const ro = reactive({
+    x:0,
+    y:0
+  })
   watchEffect(()=>{
     console.log('url',url);
     // document.addEventListener('mousemove',function(e){
@@ -13,11 +15,10 @@ export function useMoo(url:string|number|Ref<string|number>){
     //   y.value = e.pageY
     // })
     const temp = toValue(url)
-    x = 2*Number(temp)
-    y = 16*Number(temp)
+    ro.x = 2*Number(temp)
+    ro.y = 16*Number(temp)
   })
   return {
-    x,
-    y
+    ro
   }
 }
