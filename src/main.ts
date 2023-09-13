@@ -18,5 +18,17 @@ app.directive('focus', {
 
 app.use(createPinia())
 app.use(router)
+import i18nPlugin from './plugins/i18n'
+app.use(i18nPlugin, {
+  greetings: {
+    hello: 'Bonjour!'
+  }
+})
+
+// declare module '@vue/runtime-core' {
+//     interface ComponentCustomProperties {
+//       $translate: (key: string) => string;
+//   }
+// }
 
 app.mount('#app')

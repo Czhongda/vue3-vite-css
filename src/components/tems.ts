@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 
-export const countTab =  {
+export const CountTab =  {
   setup() {
     const count = ref(0)
     return { count }
@@ -13,7 +13,7 @@ export const countTab =  {
   // template: '#my-template-element'
 }
 
-export const countTab2 =  {
+export const CountTab2 =  {
   setup() {
     const count = ref(100)
     return { count }
@@ -26,4 +26,4 @@ export const countTab2 =  {
   // template: '#my-template-element'
 }
 
-export default {countTab, countTab2}
+export default {CountTab, CountTab2}

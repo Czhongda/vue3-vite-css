@@ -8,3 +8,15 @@ declare module '*.vue' {
 interface ImportMetaEnv {
   readonly VITE_API_BASE_URL: string
 }
+
+// declare module 'vue' {
+//   interface ComponentCustomProperties {
+//     $translate: (key: string) => string
+//   }
+// }
+// export {}
+// declare module 'vue' {
+//   interface ComponentCustomProperties {
+//     $translate: (key: string) => string
+//   }
+// }

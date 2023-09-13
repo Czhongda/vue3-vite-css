@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HomeView from '@/views/HomeView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -15,35 +15,35 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
+      component: () => import('@/views/AboutView.vue')
     },{
       path:'/gridTab',
       name:'gridTab',
-      component: () => import('../views/grid/index.vue')
+      component: () => import('@/views/grid/index.vue')
     },{
       path:'/flexTab',
       name:'flexTab',
-      component: () => import('../views/flex/index.vue')
+      component: () => import('@/views/flex/index.vue')
     },{
       path:'/refTem',
       name:'refTem',
-      component: () => import('../views/reftem/index.vue')
+      component: () => import('@/views/reftem/index.vue')
     },{
       path:'/compList',
       name:'compList',
-      component: () => import('../views/comlist/index.vue')
+      component: () => import('@/views/comlist/index.vue')
     },{
       path:'/asyncComp',
       name:'asyncComp',
-      component: () => import('../views/test/asyncComp/index.vue')
+      component: () => import('@/views/test/asyncComp/index.vue')
     },{
       path:'/compose',
       name:'compose',
-      component: () => import('../views/compose/index.vue')
+      component: () => import('@/views/compose/index.vue')
     },{
-      path:'/customDirec',
-      name:'customDirec',
-      component: () => import('../views/customDirec/index.vue')
+      path:'/customdirec',
+      name:'customdirec',
+      component: () => import('@/views/customdirec/index.vue')
     }
   ]
 })

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button @click="showTag=!showTag">加载</button>
+    <button @click="showTag = !showTag">加载</button>
     <AsyncComp v-if="showTag" />
   </div>
 </template>
@@ -10,58 +10,42 @@ import LoadingComponent from './LoadingComponent.vue'
 import ErrorComponent from './ErrorComponent.vue'
 import { defineAsyncComponent } from 'vue'
 const showTag = ref(false)
-console.log(333,defineAsyncComponent);
+console.log(333, defineAsyncComponent);
 
-const time = (t, callback = () => { }) => {
+const time = (t:number, callback = () => { }) => {
   return new Promise(resolve => {
     setTimeout(() => {
       callback()
-      resolve()
+      resolve(t)
     }, t)
   })
 }
 let count = 0
-const AsyncComp = defineAsyncComponent(() => ({
-  loader: 
-  ()=>import('./AsyncComp.vue'),
-  //  () => {
-  //   return new Promise((resolve, reject) => {
-  //     (async function () {
-  //       await time(2000)
-  //       const res = await import('./AsyncComp.vue')
-  //       if (count < 3) {
-  //         console.log('执行了', count);
-  //         count++
-  //         reject(res)
-  //       } else {
-  //         resolve(res)
-  //       }
-  //     })()
-  //   })
-  // },
-  // 加载异步组件时使用的组件
-  loadingComponent: LoadingComponent,
-  // 展示加载组件前的延迟时间，默认为 200ms
-  delay: 2000,
+// const AsyncComp = defineAsyncComponent(() => ({
+//   loader:() => import('./AsyncComp.vue'),
+//   // 加载异步组件时使用的组件
+//   loadingComponent: LoadingComponent,
+//   // 展示加载组件前的延迟时间，默认为 200ms
+//   delay: 2000,
 
-  // 加载失败后展示的组件
-  errorComponent: ErrorComponent,
-  // 如果提供了一个 timeout 时间限制，并超时了
-  // 也会显示这里配置的报错组件，默认值是：Infinity
-  timeout: 3000,
-  onError(error, retry, fail, attempts) {
-    // 注意，retry/fail 就像 promise 的 resolve/reject 一样：
-    // 必须调用其中一个才能继续错误处理。
-    if (attempts < 3) {
-      // 请求发生错误时重试，最多可尝试 3 次
-      console.log(attempts)
-      retry()
-    } else {
-      fail()
-    }
-  }
-}))
-// const AsyncComp = defineAsyncComponent(() => 
+//   // 加载失败后展示的组件
+//   errorComponent: ErrorComponent,
+//   // 如果提供了一个 timeout 时间限制，并超时了
+//   // 也会显示这里配置的报错组件，默认值是：Infinity
+//   timeout: 3000,
+//   onError(error, retry, fail, attempts) {
+//     // 注意，retry/fail 就像 promise 的 resolve/reject 一样：
+//     // 必须调用其中一个才能继续错误处理。
+//     if (attempts < 3) {
+//       // 请求发生错误时重试，最多可尝试 3 次
+//       console.log(attempts)
+//       retry()
+//     } else {
+//       fail()
+//     }
+//   }
+// }))
+// const AsyncComp = defineAsyncComponent(() =>
 //   import('./AsyncComp.vue')
 // )
 </script>
