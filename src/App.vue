@@ -20,6 +20,11 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/asyncComp">异步组件</RouterLink>
         <RouterLink to="/compose">组合函数</RouterLink>
         <RouterLink to="/customdirec">自定义指令</RouterLink>
+        <RouterLink to="/transition">transition</RouterLink>
+        <RouterLink to="/transitionGroup">transitionGroup</RouterLink>
+        <RouterLink to="/keepAlive">keepAlive</RouterLink>
+        <RouterLink to="/teleport">teleport</RouterLink>
+        <RouterLink to="/suspense">suspense</RouterLink>
       </nav>
     </div>
   </header>

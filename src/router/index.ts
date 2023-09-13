@@ -45,6 +45,27 @@ const router = createRouter({
       name:'customdirec',
       component: () => import('@/views/customdirec/index.vue')
     }
+    ,{
+      path:'/transition',
+      name:'transition',
+      component: () => import('@/views/trans/transition/index.vue')
+    },{
+      path:'/transitionGroup',
+      name:'transitionGroup',
+      component: () => import('@/views/trans/group/index.vue')
+    },{
+      path:'/keepAlive',
+      name:'keepAlive',
+      component: () => import('@/views/trans/alive/index.vue')
+    },{
+      path:'/teleport',
+      name:'teleport',
+      component: () => import('@/views/trans/tele/index.vue')
+    },{
+      path:'/suspense',
+      name:'suspense',
+      component: () => import('@/views/trans/susp/index.vue')
+    }
   ]
 })
 
