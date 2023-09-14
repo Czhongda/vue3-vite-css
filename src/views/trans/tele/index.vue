@@ -22,7 +22,7 @@
 <script setup lang="ts">
 import MyModal from './MyModal.vue'
 import OtModal from './OtModal.vue'
-import { ref } from 'vue'
+import { ref,onMounted } from 'vue'
 const showModal = ref(false)
 
 var result = window.matchMedia('(max-width: 700px)');
@@ -32,6 +32,10 @@ if (result.matches) {
 } else {
   console.log('页面宽度大于700px');
 }
+
+onMounted(() => {
+  console.log('mounted',window.location.hash)
+})
 </script>
 <style lang="scss" scoped>
 .outer {
