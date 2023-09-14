@@ -10,13 +10,13 @@
     OtModal
     <button id="show-modal" @click="showModal = true">Show Modal</button>
     <Teleport to="body">
-    <!-- 使用这个 modal 组件，传入 prop -->
-    <ot-modal :show="showModal" @close="showModal = false">
-      <template #header>
-        <h3>custom header</h3>
-      </template>
-    </ot-modal>
-  </Teleport>
+      <!-- 使用这个 modal 组件，传入 prop -->
+      <ot-modal :show="showModal" @close="showModal = false">
+        <template #header>
+          <h3>custom header</h3>
+        </template>
+      </ot-modal>
+    </Teleport>
   </div>
 </template>
 <script setup lang="ts">
@@ -24,9 +24,17 @@ import MyModal from './MyModal.vue'
 import OtModal from './OtModal.vue'
 import { ref } from 'vue'
 const showModal = ref(false)
+
+var result = window.matchMedia('(max-width: 700px)');
+
+if (result.matches) {
+  console.log('页面宽度小于等于700px');
+} else {
+  console.log('页面宽度大于700px');
+}
 </script>
 <style lang="scss" scoped>
-  .outer{
-    transform: translate(100px,100px);
-  }
+.outer {
+  transform: translate(100px, 100px);
+}
 </style>
