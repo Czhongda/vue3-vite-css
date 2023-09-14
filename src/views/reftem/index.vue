@@ -27,6 +27,7 @@ onMounted(() => {
   }, 3000);
 })
 const inputChange = (e:Event) => {
+  // console.log(111, (e.target as HTMLInputElement).value, inputValue.value, inputRef.value?.value);
   console.log(111, (e.target as HTMLInputElement).value, inputValue.value, inputRef.value?.value);
   inputValue.value = (e.target as HTMLInputElement).value
 }

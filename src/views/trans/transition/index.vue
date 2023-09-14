@@ -8,10 +8,15 @@
     <div @mousemove="onMousemove" :style="{ backgroundColor: `hsl(${x}, 80%, 50%)` }" class="movearea">
       <p>Move your mouse across this div...</p>
       <p>x: {{ x }}</p>
-      
+
     </div>
     <hr />
-      <div class="transform">transform</div>
+    <div class="transform">transform</div>
+    <Transition name="bounce">
+      <p v-if="show" style="text-align: center;">
+        Hello here is some bouncy text!
+      </p>
+    </Transition>
   </div>
 </template>
 <script setup lang="ts">
@@ -39,12 +44,15 @@ const show = ref(false)
   transition: 0.3s background-color cubic-bezier(1, 0.5, 0.8, 1);
 }
 
-.transform{
-  background-color:blue;
-  width:100px;
-  height:100px;
-  transition:transform 3s ease;
-  &:hover{
+.transform {
+  background-color: blue;
+  width: 100px;
+  height: 100px;
+  animation: reddiv 2s linear 1s infinite alternate;
+  animation-play-state: running;
+  // transition: transform 3s ease;
+
+  &:hover {
     // rotate(45deg)
     // transform-origin: left top
     // transform:translate(50px,50px) scale(0.8,0.8);
@@ -53,7 +61,41 @@ const show = ref(false)
     // 该实例通过skew方法把元素水平方向上倾斜30度，处置方向保持不变。
     // transform:skew(30deg,0deg);
     // transform:skew(0deg,30deg);
-    transform:translate(100px,100px) rotateZ(45deg)
+    // transform: rotateX(45deg);
+    // transform: rotateY(45deg) rotateZ(45deg);
+    // transform: rotateZ(45deg);
+    // animation: reddiv 5s;
   }
 }
-</style>
+@keyframes reddiv{
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(.5) translate(100px,100px);
+  }
+  100%{
+    transform:scale(1) translate(100px,100px);
+  }
+}
+.bounce-enter-active {
+  animation: bounce-in 0.5s;
+}
+
+.bounce-leave-active {
+  animation: bounce-in 0.5s reverse;
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1.25);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}</style>
