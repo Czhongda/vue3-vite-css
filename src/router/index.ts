@@ -48,7 +48,21 @@ const router = createRouter({
     ,{
       path:'/transition',
       name:'transition',
-      component: () => import('@/views/trans/transition/index.vue')
+      redirect:'/transition/high',
+      component: () => import('@/views/trans/transition/index.vue'),
+      children:[{
+        path:'high',
+        name:'high',
+        component:() => import('@/views/someel/index.vue')
+      },
+      {
+        path: 'about1/index',
+        name: 'about1',
+        // route level code-splitting
+        // this generates a separate chunk (About.[hash].js) for this route
+        // which is lazy-loaded when the route is visited.
+        component: () => import('@/views/AboutView.vue')
+      }]
     },{
       path:'/transitionGroup',
       name:'transitionGroup',

@@ -21,6 +21,8 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/compose">组合函数</RouterLink>
         <RouterLink to="/customdirec">自定义指令</RouterLink>
         <RouterLink to="/transition">transition</RouterLink>
+        <RouterLink to="/transition/high">transition--someel</RouterLink>
+        <RouterLink to="/transition/about1/index">transition--about1</RouterLink>
         <RouterLink to="/transitionGroup">transitionGroup</RouterLink>
         <RouterLink to="/keepAlive">keepAlive</RouterLink>
         <RouterLink to="/teleport">teleport</RouterLink>

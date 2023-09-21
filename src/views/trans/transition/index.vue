@@ -17,6 +17,11 @@
         Hello here is some bouncy text!
       </p>
     </Transition>
+    <div>
+      some---else
+      <RouterView />
+    </div>
+
   </div>
 </template>
 <script setup lang="ts">
